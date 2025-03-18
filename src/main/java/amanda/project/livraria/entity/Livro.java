@@ -5,7 +5,7 @@ import lombok.*;
 
 import java.io.Serializable;
 
-@AllArgsConstructor
+
 @NoArgsConstructor
 @Getter
 @Setter
@@ -22,6 +22,12 @@ public class Livro implements Serializable {
     @ManyToOne
     @JoinColumn(name = "autor_id")
     private Autor autor;
+
+    public Livro(Long id, String nome, Autor autor) {
+        this.id = id;
+        this.nome = nome;
+        this.autor = autor;
+    }
 
     public Long getId() {
         return id;
